@@ -35,69 +35,11 @@ public class Chandrayan3TDDAssessment
 			switch(s)
 			{
 			case "f":
-				if(obj.up_down == "u" || obj.up_down == "d")
-				{
-					if(obj.up_down == "u")
-						obj.z++;
-					else
-						obj.z--;
-					System.out.println(s + " - (" + obj.x + ", " + obj.y + ", " + obj.z + ") - " + obj.up_down);
-				}
-				else
-				{
-					switch(obj.direction)
-					{
-					case "N":
-						obj.y++;
-						break;
-						
-					case "E":
-						obj.x++;
-						break;
-						
-					case "S":
-						obj.y--;
-						break;
-						
-					case "W":
-						obj.x--;
-						break;
-					}
-					System.out.println(s + " - (" + obj.x + ", " + obj.y + ", " + obj.z + ") - " + obj.direction);
-				}
+				obj.moveFB(s, obj, 1);
 				break;
 				
 			case "b":
-				if(obj.up_down == "u" || obj.up_down == "d")
-				{
-					if(obj.up_down == "u")
-						obj.z--;
-					else
-						obj.z++;
-					System.out.println(s + " - (" + obj.x + ", " + obj.y + ", " + obj.z + ") - " + obj.up_down);
-				}
-				else
-				{
-					switch(obj.direction)
-					{
-					case "N":
-						obj.y--;
-						break;
-						
-					case "E":
-						obj.x--;
-						break;
-						
-					case "S":
-						obj.y++;
-						break;
-						
-					case "W":
-						obj.x++;
-						break;
-					}
-					System.out.println(s + " - (" + obj.x + ", " + obj.y + ", " + obj.z + ") - " + obj.direction);
-				}
+				obj.moveFB(s, obj, -1);
 				break;
 				
 			case "l":
@@ -162,6 +104,42 @@ public class Chandrayan3TDDAssessment
 					
 			}
 		}
+		
 		System.out.println("\nThe final position of the spacecraft: (" + obj.x + "," + obj.y + "," + obj.z + ")\n--------------------------------------------------");
+		sc.close();
+	}
+	
+	public void moveFB (String s, Chandrayan3TDDAssessment obj, int displacement)
+	{
+		if(obj.up_down == "U" || obj.up_down == "D")
+		{
+			if(obj.up_down == "U")
+				obj.z =+ displacement;
+			else
+				obj.z -= displacement;
+			System.out.println(s + " - (" + obj.x + ", " + obj.y + ", " + obj.z + ") - " + obj.up_down);
+		}
+		else
+		{
+			switch(obj.direction)
+			{
+			case "N":
+				obj.y += displacement;
+				break;
+				
+			case "E":
+				obj.x += displacement;
+				break;
+				
+			case "S":
+				obj.y -= displacement;
+				break;
+				
+			case "W":
+				obj.x -= displacement;
+				break;
+			}
+			System.out.println(s + " - (" + obj.x + ", " + obj.y + ", " + obj.z + ") - " + obj.direction);
+		}
 	}
 }
