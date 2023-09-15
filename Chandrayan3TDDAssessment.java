@@ -97,14 +97,47 @@ public class Chandrayan3TDDAssessment
 				break;
 				
 			case "l":
-				obj.up_down = "s";
+				obj.up_down = "S";
 				switch(obj.direction)
 				{
-				case
+				case "N":
+					obj.direction = "W";
+					break;
+					
+				case "W":
+					obj.direction = "S";
+					break;
+					
+				case "S":
+					obj.direction = "E";
+					break;
+					
+				case "E":
+					obj.direction = "N";
+					break;
 				}
 				break;
 				
 			case "r":
+				obj.up_down = "S";
+				switch(obj.direction)
+				{
+				case "N":
+					obj.direction = "E";
+					break;
+					
+				case "W":
+					obj.direction = "N";
+					break;
+					
+				case "S":
+					obj.direction = "W";
+					break;
+					
+				case "E":
+					obj.direction = "S";
+					break;
+				}
 				break;
 				
 			case "u":
