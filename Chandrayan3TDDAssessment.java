@@ -141,9 +141,13 @@ public class Chandrayan3TDDAssessment
 				break;
 				
 			case "u":
+				obj.up_down = "u";
+				System.out.println(s + " - (" + obj.x + ", " + obj.y + ", " + obj.z + ") - " + obj.up_down);
 				break;
 				
 			case "d":
+				obj.up_down = "d";
+				System.out.println(s + " - (" + obj.x + ", " + obj.y + ", " + obj.z + ") - " + obj.up_down);
 				break;
 				
 			default:
