@@ -120,7 +120,8 @@ public class Chandrayan3TDDAssessment
 		System.out.println("\nThe final position of the spacecraft: (" + obj.x + "," + obj.y + "," + obj.z + ")\n--------------------------------------------------");
 		sc.close();
 	}
-	
+
+	//Function for linear displacement
 	public void moveFB (String s, Chandrayan3TDDAssessment obj, int displacement)
 	{
 		//In case the spacecraft is in upward downward direction
